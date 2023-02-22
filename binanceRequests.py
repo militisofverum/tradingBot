@@ -4,12 +4,10 @@ from telegramBot import *
 import os
 import sys
 
-apiKey = os.getenv("apiKey", default=None)
-secretKey = os.getenv("secretKey", default=None)
-print('Hello apiKey!' + apiKey, file=sys.stderr)
-print('Hello secretKey!' + secretKey, file=sys.stderr)
-client = Client(apiKey, secretKey)
-
+# apiKey = os.getenv("apiKey", default=None)
+# secretKey = os.getenv("secretKey", default=None)
+# client = Client(apiKey, secretKey)
+client = Client("jbSBLFwfIJsKG2A75QFQoEEInNdlozA2pJ2gkNNbJatHsVlLprGNStPvy6vU24M2", "uPjScnrYvUNFf9As9YlFDCrp1cyHxcFmQfpwnnvchw86tdMJY0Lm3EAKmwsQp40K",testnet=True)
 
 def create_buy_market_order(pair, stableCoinBalance):
     order = client.create_order(

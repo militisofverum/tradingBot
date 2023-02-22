@@ -2,11 +2,13 @@ from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
 from helpers import *
 from telegramBot import *
 import os
+import sys
 
 apiKey = os.getenv("apiKey", default=None)
 secretKey = os.getenv("secretKey", default=None)
-
-client = Client(apiKey, secretKey, testnet=False)
+print('Hello apiKey! {apiKey}', file=sys.stderr)
+print('Hello secretKey! {secretKey}', file=sys.stderr)
+client = Client(apiKey, secretKey)
 
 
 def create_buy_market_order(pair, stableCoinBalance):

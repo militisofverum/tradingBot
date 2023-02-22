@@ -1,2 +1,6 @@
 Flask
 Gunicorn
+Binance
+Requests
+Sys
+Os

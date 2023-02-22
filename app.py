@@ -19,7 +19,4 @@ def webhook():
         send_telegram_message("balance Coin: " + str(balance) + "balance stable Coin: " + str(stableCoinBalance))
     return 'hello to me'
     
-    
 
-if __name__ == '__main__':
-    app.run(debug=True, port=2000)

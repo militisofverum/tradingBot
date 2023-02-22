@@ -6,8 +6,8 @@ import sys
 
 apiKey = os.getenv("apiKey", default=None)
 secretKey = os.getenv("secretKey", default=None)
-print('Hello apiKey! {apiKey}', file=sys.stderr)
-print('Hello secretKey! {secretKey}', file=sys.stderr)
+print('Hello apiKey!' + apiKey, file=sys.stderr)
+print('Hello secretKey!' + secretKey, file=sys.stderr)
 client = Client(apiKey, secretKey)
 
 

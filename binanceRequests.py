@@ -36,35 +36,24 @@ def get_price(pair):
 
 def buy_receive(coin, stableCoin, pair):
     stableCoinBalance = get_stablecoin_balance(stableCoin)
-    print(stableCoinBalance)
-    # telegram
+    send_telegram_message("Buy started stableCoinBalance: " + stableCoinBalance)
     while stableCoinBalance > 10:
         create_buy_market_order(pair, stableCoinBalance)
         stableCoinBalance = get_stablecoin_balance(stableCoin)
     coinBalance = get_balance(coin)
     stableCoinBalance = get_stablecoin_balance(stableCoin)
     price = get_price(pair)
-    print(coinBalance)
-    print(stableCoinBalance)
-    print(price)
-    # telegram
+    send_telegram_message("Buy finished stableCoinBalance: " + stableCoinBalance + " coinBalance: " + coinBalance + " price: " + price)
 
 def sell_receive(coin, stableCoin, pair):
     coinBalance = get_balance(coin)
     print(coinBalance)
-    # telegram
+    send_telegram_message("Sell started coinBalance: " + coinBalance)
     while coinBalance > 0.1:
         create_sell_market_order(pair, coinBalance)
         coinBalance = get_balance(coin)
     coinBalance = get_balance(coin)
     stableCoinBalance = get_stablecoin_balance(stableCoin)
     price = get_price(pair)
-    print(coinBalance)
-    print(stableCoinBalance)
-    print(price)
-    # telegram
-
-
-
-# sent to telegram 
+    send_telegram_message("Sell finished stableCoinBalance: " + stableCoinBalance + " coinBalance: " + coinBalance + " price: " + price)
 

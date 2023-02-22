@@ -1,5 +1,4 @@
 from flask import Flask,request
-import sys
 from binanceRequests import *
 from telegramBot import *
 
@@ -15,8 +14,8 @@ def webhook():
     message = request.data.decode('UTF-8')
     if message == 'BUY':
         # buy_receive(coin, stableCoin, pair)
-        print('bought', file=sys.stderr)
+        print('bought')
     if message == 'SELL':
         # sell_receive(coin, stableCoin, pair)
-        print('sold', file=sys.stderr)
+        print('sold')
     return 'hello to me'

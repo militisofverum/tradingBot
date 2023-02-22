@@ -2,4 +2,3 @@ Flask
 Gunicorn
 Binance
 Requests
-Os

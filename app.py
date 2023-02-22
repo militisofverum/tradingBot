@@ -15,5 +15,5 @@ def webhook():
         if message == 'SELL':
             sell_receive(coin, stableCoin, pair)
     except Exception as e: 
-        send_telegram_message("Error:" + e)
+        send_telegram_message("Error:" + str(e))
     return 'hello to me'

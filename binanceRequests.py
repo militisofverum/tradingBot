@@ -54,18 +54,16 @@ def buy_receive(coin, stableCoin, pair, retryCount = 5):
     
 def sell_receive(coin, stableCoin, pair, retryCount = 5):
     try:
-        1/0
-        # coinBalance = get_balance(coin)
-        # print(coinBalance)
-        # send_telegram_message("Sell started coinBalance: " + str(coinBalance))
-        # while coinBalance > 0.1:
-        #     create_sell_market_order(pair, coinBalance)
-        #     coinBalance = get_balance(coin)
-        #     send_telegram_message("Sell started coinBalance: " + str(coinBalance))
-        # coinBalance = get_balance(coin)
-        # stableCoinBalance = get_stablecoin_balance(stableCoin)
-        # price = get_price(pair)
-        # send_telegram_message("Sell finished stableCoinBalance: " + str(stableCoinBalance) + " coinBalance: " + str(coinBalance) + " price: " + str(price))
+        coinBalance = get_balance(coin)
+        send_telegram_message("Sell started coinBalance: " + str(coinBalance))
+        while coinBalance > 0.1:
+            create_sell_market_order(pair, coinBalance)
+            coinBalance = get_balance(coin)
+            send_telegram_message("Sell started coinBalance: " + str(coinBalance))
+        coinBalance = get_balance(coin)
+        stableCoinBalance = get_stablecoin_balance(stableCoin)
+        price = get_price(pair)
+        send_telegram_message("Sell finished stableCoinBalance: " + str(stableCoinBalance) + " coinBalance: " + str(coinBalance) + " price: " + str(price))
     except Exception as e:    
         send_telegram_message("Error:" + str(e))
         if retryCount > 0:
